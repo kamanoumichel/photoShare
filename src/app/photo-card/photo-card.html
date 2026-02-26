@@ -1,0 +1,18 @@
+<div class="photo-card" [ngClass]="{liked:isliked}">
+    <!--h1>{{0.876 |percent}}</h1-->
+    <h2>{{photoCard.title | uppercase}}</h2>
+    @if(this.photoCard.location){
+        <p>Lieu : {{photoCard.location}}</p>
+    }
+    @else {
+        <p>Localisation non définie</p>
+    }
+    <img [src]="photoCard.imageUrl" [alt]="photoCard.title">
+    <p>{{photoCard.description}}</p>
+    <p>Photo prise le {{photoCard.created_at| date: 'dd MMMM yyyy à HH:mm'}}</p>
+    <p>
+        <button (click)="onAddLike()">{{photoCard.textLikeButton}}</button>
+        Nombre de likes : <span [ngStyle]="{color:'rgb(0,'+photoCard.like+',0)'}">{{photoCard.like}}</span> 
+    </p>
+</div>
+
