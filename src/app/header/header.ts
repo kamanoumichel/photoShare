@@ -1,9 +1,10 @@
 import { UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: 'app-header',
-  imports: [UpperCasePipe],
+  imports: [UpperCasePipe, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
